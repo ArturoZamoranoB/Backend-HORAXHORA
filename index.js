@@ -23,22 +23,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Servidor backend de ejemplo corriendo en puerto ${PORT}`);
 });
-
-const app2 = express();
-app2.use(cors());
-app2.use(express.json());
-
-const servicios = [
-  { id: 1, nombre: "Clases de guitarra", descripcion: "Enseño guitarra básica los fines de semana." },
-  { id: 2, nombre: "Reparación de computadoras", descripcion: "Puedo ayudarte a limpiar virus y optimizar tu PC." },
-  { id: 3, nombre: "Traducciones", descripcion: "Traducción de textos inglés-español de forma profesional." }
-];
-
-app2.get("/api/servicios", (req, res) => {
-  res.json(servicios);
-});
-
-const PORT2 = 4000;
-app2.listen(PORT2, () => {
-  console.log(`✅ API 2 corriendo en http://localhost:${PORT2}/api/servicios`);
-});
